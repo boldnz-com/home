@@ -41,7 +41,7 @@ function ContactForm() {
 
   if (submitted) {
     return (
-      <div className="bg-green-100 border border-green-400 text-green-800 rounded-lg p-6 text-center">
+      <div className="bg-green-100 border border-green-400 text-green-800 rounded p-6 text-center">
         <div className="text-3xl mb-2">✓</div>
         <h3 className="text-xl font-bold mb-1">Thanks for reaching out!</h3>
         <p>We'll be in touch with your free quote soon.</p>
@@ -72,7 +72,7 @@ function ContactForm() {
           required
           value={fields.name}
           onChange={handleChange}
-          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
         />
       </div>
 
@@ -87,7 +87,7 @@ function ContactForm() {
           required
           value={fields.email}
           onChange={handleChange}
-          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
         />
       </div>
 
@@ -101,11 +101,11 @@ function ContactForm() {
           name="phone"
           value={fields.phone}
           onChange={handleChange}
-          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full px-3 py-2 rounded text-gray-800 focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
         />
       </div>
 
-      <div className="mb-6">
+      <div className="mb-5">
         <label className="block font-semibold mb-1" htmlFor="message">
           Tell us about your property
         </label>
@@ -116,13 +116,13 @@ function ContactForm() {
           rows={5}
           value={fields.message}
           onChange={handleChange}
-          className="w-full px-3 py-2 rounded text-gray-800 resize-y focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full px-3 py-2 rounded text-gray-800 resize-y focus:outline-none focus:ring-4 focus:ring-green-500 focus:ring-opacity-50"
         />
       </div>
 
       <button
         type="submit"
-        className="bg-[#7cb342] hover:bg-[#9ccc65] text-white font-semibold px-8 py-3 rounded transition-colors duration-200 cursor-pointer"
+        className="w-full bg-[#7cb342] hover:bg-[#9ccc65] text-white font-semibold px-8 py-3 rounded transition-colors duration-200 cursor-pointer"
       >
         Request a Free Quote
       </button>
