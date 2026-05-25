@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bold Property Maintenance | Palmerston North's Lawn & Garden Services</title>
+  <meta name="description" content="Professional lawn and garden care in the Manawatu area. Mowing, hedging, and seasonal maintenance for residential and commercial properties.">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, sans-serif;
+      color: #333;
+      background-color: #f9f9f9;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── Header ── */
+    header {
+      background-color: #1a4d2e;
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+
+    nav {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: bold;
+      letter-spacing: 0.1em;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    nav a:hover {
+      color: #7cb342;
+    }
+
+    /* ── Hero Section ── */
+    .hero {
+      background: linear-gradient(135deg, #1a4d2e 0%, #2d7a3a 100%);
+      color: white;
+      padding: 6rem 2rem;
+      text-align: center;
+    }
+
+    .hero-content {
+      max-width: 50rem;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .hero p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      opacity: 0.95;
+    }
+
+    .btn-primary {
+      display: inline-block;
+      background-color: #7cb342;
+      color: white;
+      padding: 1rem 2.5rem;
+      border-radius: 0.375rem;
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.2s;
+      border: none;
+      cursor: pointer;
+      font-size: 1rem;
+    }
+
+    .btn-primary:hover {
+      background-color: #9ccc65;
+      transform: translateY(-2px);
+    }
+
+    /* ── Services Section ── */
+    .services {
+      background-color: #f3f4f6;
+      padding: 4rem 2rem;
+    }
+
+    .services-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .services h2 {
+      font-size: 2.25rem;
+      color: #1a4d2e;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: bold;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+    }
+
+    .service-card {
+      background: white;
+      border-radius: 0.5rem;
+      padding: 2rem;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      transition: all 0.3s;
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
+    }
+
+    .service-icon {
+      font-size: 2.25rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .service-card h3 {
+      font-size: 1.25rem;
+      color: #1a4d2e;
+      margin-bottom: 0.75rem;
+      font-weight: bold;
+    }
+
+    .service-card p {
+      color: #666;
+      line-height: 1.6;
+    }
+
+    /* ── About Section ── */
+    .about {
+      padding: 4rem 2rem;
+    }
+
+    .about-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .about h2 {
+      font-size: 2.25rem;
+      color: #1a4d2e;
+      margin-bottom: 2.5rem;
+      font-weight: bold;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .about-text h3 {
+      font-size: 1.5rem;
+      color: #1a4d2e;
+      margin-bottom: 1rem;
+      font-weight: bold;
+    }
+
+    .about-text p {
+      color: #666;
+      margin-bottom: 1rem;
+      line-height: 1.8;
+    }
+
+    .about-box {
+      background-color: #e8f5e9;
+      border-left: 4px solid #7cb342;
+      border-radius: 0.375rem;
+      padding: 2rem;
+    }
+
+    .about-box h4 {
+      font-weight: bold;
+      color: #1a4d2e;
+      margin-bottom: 0.5rem;
+    }
+
+    .about-box p {
+      color: #2d5016;
+      font-weight: 500;
+      margin-bottom: 1.25rem;
+    }
+
+    .about-box ul {
+      list-style: none;
+      color: #2d5016;
+      line-height: 1.8;
+    }
+
+    .about-box li {
+      margin-bottom: 0.25rem;
+    }
+
+    @media (max-width: 768px) {
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero h1 {
+        font-size: 2rem;
+      }
+
+      nav ul {
+        gap: 1rem;
+      }
+    }
+
+    /* ── Contact Section ── */
+    .contact {
+      background-color: #1a4d2e;
+      color: white;
+      padding: 4rem 2rem;
+    }
+
+    .contact-content {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .contact h2 {
+      font-size: 2.25rem;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-weight: bold;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+    }
+
+    .contact-info h3 {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      font-weight: bold;
+    }
+
+    .contact-item {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 2rem;
+    }
+
+    .contact-icon {
+      font-size: 1.5rem;
+      flex-shrink: 0;
+    }
+
+    .contact-item h4 {
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .contact-item p {
+      opacity: 0.9;
+    }
+
+    /* ── Form ── */
+    .form-group {
+      margin-bottom: 1.25rem;
+    }
+
+    .form-group label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 0.25rem;
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      border: none;
+      color: #333;
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      outline: none;
+      box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.5);
+    }
+
+    .form-submit {
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    .success-message {
+      background-color: #c8e6c9;
+      border: 1px solid #81c784;
+      color: #2e7d32;
+      border-radius: 0.5rem;
+      padding: 1.5rem;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .success-message .check {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .success-message h3 {
+      font-size: 1.25rem;
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+    }
+
+    .error-message {
+      background-color: #ffcdd2;
+      border: 1px solid #ef5350;
+      color: #c62828;
+      padding: 0.75rem;
+      border-radius: 0.375rem;
+      margin-bottom: 1rem;
+    }
+
+    .hidden {
+      display: none;
+    }
+
+    @media (max-width: 768px) {
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    /* ── Footer ── */
+    footer {
+      background-color: #0d2818;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+
+    footer p {
+      margin-bottom: 0.5rem;
+    }
+
+    footer .footer-secondary {
+      opacity: 0.75;
+      font-size: 0.875rem;
+      margin-bottom: 0.75rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    footer .footer-links a {
+      color: #7cb342;
+      text-decoration: none;
+      font-size: 0.875rem;
+    }
+
+    footer .footer-links a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ── Header ── -->
+  <header>
+    <nav>
+      <div class="logo">🌿 BOLD</div>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ── Hero Section ── -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Bold Property Maintenance</h1>
+      <p>Professional lawn and garden care in the Manawatu area</p>
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+    </div>
+  </section>
+
+  <!-- ── Services Section ── -->
+  <section id="services" class="services">
+    <div class="services-content">
+      <h2>Our Services</h2>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🌱</div>
+          <h3>Lawn Mowing & Care</h3>
+          <p>Regular lawn mowing, edging, and maintenance to keep your property looking pristine year-round. We handle residential and commercial properties.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">✂️</div>
+          <h3>Hedge & Tree Trimming</h3>
+          <p>Professional hedge trimming and edge work to maintain clean lines and healthy plants. We use modern equipment for precise results.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🍃</div>
+          <h3>General Garden Maintenance</h3>
+          <p>Leaf blowing, debris removal, and general tidying services. Perfect for keeping your outdoor spaces clean and well-maintained.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">📅</div>
+          <h3>Seasonal Packages</h3>
+          <p>Flexible monthly or seasonal maintenance plans tailored to your property's needs. Save money with ongoing service agreements.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏢</div>
+          <h3>Commercial Properties</h3>
+          <p>Reliable maintenance for investment properties, rental homes, and commercial developments. Fast, professional, and fully insured.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">⚡</div>
+          <h3>Quick Turnarounds</h3>
+          <p>We pride ourselves on fast, reliable service. Same-week scheduling available for most requests.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── About Section ── -->
+  <section id="about" class="about">
+    <div class="about-content">
+      <h2>About Bold</h2>
+      <div class="about-grid">
+        <div class="about-text">
+          <h3>Who We Are</h3>
+          <p>Bold Property Maintenance was founded on a simple belief: every property deserves to look its best!</p>
+          <p>We are a locally-owned maintenance business that combines professional, high-quality service with genuine community commitment.</p>
+          <p>When you choose Bold, you're supporting a local family business with strong ties to the wider community.</p>
+        </div>
+        <div class="about-box">
+          <h4>Our Mission</h4>
+          <p>To provide bold, reliable property maintenance while empowering young New Zealanders to develop skills, confidence, and sustainable careers.</p>
+          <h4>Why Choose Us?</h4>
+          <ul>
+            <li>✓ Fully insured & compliant</li>
+            <li>✓ Professional & experienced</li>
+            <li>✓ Local community focus</li>
+            <li>✓ Flexible scheduling</li>
+            <li>✓ Competitive pricing</li>
+            <li>✓ Health & Safety certified</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Contact Section ── -->
+  <section id="contact" class="contact">
+    <div class="contact-content">
+      <h2>Get in Touch</h2>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Contact Bold</h3>
+          <div class="contact-item">
+            <span class="contact-icon">📞</span>
+            <div>
+              <h4>Phone</h4>
+              <p>022 6055 453</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">✉️</span>
+            <div>
+              <h4>Email</h4>
+              <p>Joel@boldmaintenance.co.nz</p>
+            </div>
+          </div>
+          <div class="contact-item">
+            <span class="contact-icon">📍</span>
+            <div>
+              <h4>Service Area</h4>
+              <p>Palmerston North & Manawatu Area</p>
+            </div>
+          </div>
+        </div>
+
+        <form id="contactForm">
+          <div id="successMessage" class="success-message hidden">
+            <div class="check">✓</div>
+            <h3>Thanks for reaching out!</h3>
+            <p>We'll be in touch with your free quote soon.</p>
+          </div>
+
+          <div id="errorMessage" class="error-message hidden">
+            Something went wrong. Please try emailing us directly.
+          </div>
+
+          <input type="hidden" name="form-name" value="contact" />
+          <input type="hidden" name="bot-field" />
+
+          <div class="form-group">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email Address</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone Number</label>
+            <input type="tel" id="phone" name="phone">
+          </div>
+
+          <div class="form-group">
+            <label for="message">Tell us about your property</label>
+            <textarea id="message" name="message" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-primary form-submit">Request a Free Quote</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Footer ── -->
+  <footer>
+    <p>&copy; 2026 Bold Property Maintenance. All rights reserved.</p>
+    <p class="footer-secondary">NZBN: 9429053659002 | Public Liability Insurance: TBC</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+      <a href="#">Health & Safety</a>
+    </div>
+  </footer>
+
+  <script>
+    const form = document.getElementById('contactForm');
+    const successMessage = document.getElementById('successMessage');
+    const errorMessage = document.getElementById('errorMessage');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      try {
+        const response = await fetch('/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+          },
+          body: new URLSearchParams(data),
+        });
+
+        if (response.ok) {
+          form.style.display = 'none';
+          successMessage.classList.remove('hidden');
+        } else {
+          errorMessage.classList.remove('hidden');
+        }
+      } catch (error) {
+        errorMessage.classList.remove('hidden');
+      }
+    });
+  </script>
+
+</body>
+</html>
