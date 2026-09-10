@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bold Property Maintenance - End-of-Tenancy & Bond Cleaning</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+        }
+
+        header {
+            background: #7cb342;
+            color: white;
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+
+        nav {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 2rem;
+            margin: 0;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
+        }
+
+        nav a:hover {
+            opacity: 0.8;
+        }
+
+        .hero {
+            background: linear-gradient(135deg, #7cb342 0%, #9ccc65 100%);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5em;
+            margin-bottom: 0.5rem;
+            font-weight: 700;
+        }
+
+        .hero-tagline {
+            font-size: 1.2em;
+            margin-bottom: 1rem;
+            opacity: 0.95;
+        }
+
+        .hero-description {
+            font-size: 1.05em;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+            line-height: 1.6;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: white;
+            color: #7cb342;
+            padding: 0.8rem 1.5rem;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            background: #f5f5f5;
+            transform: translateY(-2px);
+        }
+
+        .services {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+            background: #f9f9f9;
+        }
+
+        .services h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .service-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+        }
+
+        .service-card:hover {
+            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.2);
+            transform: translateY(-4px);
+        }
+
+        .service-card h3 {
+            color: #7cb342;
+            font-size: 1.3em;
+            margin-bottom: 1rem;
+        }
+
+        .service-card p {
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
+        }
+
+        .about {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-text p {
+            color: #666;
+            margin-bottom: 1rem;
+            line-height: 1.7;
+        }
+
+        .about-image {
+            background: #7cb342;
+            height: 300px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.1em;
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .pricing {
+            background: #f9f9f9;
+            padding: 3rem 2rem;
+        }
+
+        .pricing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #7cb342;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-size: 2.5em;
+            color: #7cb342;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.7rem 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #7cb342;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .contact {
+            background: #7cb342;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .contact-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        footer {
+            background: #2d5a2d;
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            font-size: 0.85em;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        footer a {
+            color: white;
+            text-decoration: none;
+            margin: 0 1rem;
+        }
+
+        footer a:hover {
+            opacity: 0.8;
+        }
+
+        @media (max-width: 768px) {
+            nav ul {
+                gap: 1rem;
+                font-size: 0.9em;
+            }
+
+            .hero h1 {
+                font-size: 1.8em;
+            }
+
+            .about-content,
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+
+            .services-grid,
+            .pricing-tiers {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html" class="logo">← Back to Directory</a>
+            <a href="index.html" class="logo" style="margin-left: auto;">
+                Bold Property Maintenance
+            </a>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Bold Property Maintenance</h1>
+            <p class="hero-tagline">Professional lawn and garden care in the Manawatu area</p>
+            <p class="hero-description">
+                We are a locally-owned maintenance business that combines professional, high-quality service 
+                with genuine community commitment. Every property deserves to look its best!
+            </p>
+            <a href="#contact" class="cta-button">Get a Quote Today</a>
+        </div>
+    </section>
+
+    <section class="services" id="services">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <h3>Lawn Maintenance</h3>
+                <p>Regular mowing, edging, and lawn care to keep your property looking pristine. Professional techniques and quality equipment ensure excellent results every time.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Garden Care</h3>
+                <p>Planting, weeding, pruning, and seasonal garden maintenance. We help your garden thrive throughout the year with expert horticultural care.</p>
+            </div>
+            
+            <div class="service-card">
+                <h3>Property Cleaning</h3>
+                <p>Gutter cleaning, fence maintenance, and general property upkeep. Comprehensive cleaning services to maintain your property in top condition.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>End-of-Tenancy Cleaning</h3>
+                <p>Thorough property cleaning and preparation for new tenants. Meet bond requirements and ensure seamless handover with our professional cleaning services.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="about" id="about">
+        <h2>About Bold Property</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    When you choose Bold Property Maintenance, you're supporting a local family business with 
+                    strong ties to the wider community.
+                </p>
+                <p>
+                    With years of experience and a passion for quality workmanship, we take pride in every project 
+                    we undertake. Your lawn, garden, and property receive the care and attention they deserve.
+                </p>
+                <p>
+                    Serving the Manawatu region with reliability, professionalism, and genuine care for our clients 
+                    and their properties.
+                </p>
+            </div>
+            <div class="about-image">
+                Your Property Care Experts
+            </div>
+        </div>
+    </section>
+
+    <section class="pricing" id="pricing">
+        <div class="pricing-content">
+            <h2>Service Packages</h2>
+            <p style="text-align: center; color: #666; margin-bottom: 2rem;">
+                All packages optimized for unfurnished, empty 3-Bedroom, 1-Bathroom homes to guarantee seamless property handover.
+            </p>
+            
+            <div class="pricing-tiers">
+                <div class="pricing-card">
+                    <h3>The Standard Move-Out</h3>
+                    <div class="price-amount">$350</div>
+                    <p style="color: #999; font-size: 0.9em;">GST Inc.</p>
+                    <ul>
+                        <li>Kitchen exterior & appliances</li>
+                        <li>Bathroom sanitizing</li>
+                        <li>Complete floor cleaning</li>
+                        <li>Light fixture & switch dusting</li>
+                        <li>Minor spot cleaning</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>The "Bond-Back" Complete</h3>
+                    <div class="price-amount">$520</div>
+                    <p style="color: #999; font-size: 0.9em;">GST Inc. — RECOMMENDED</p>
+                    <ul>
+                        <li>Everything in Standard package</li>
+                        <li>Deep oven & rangehood clean</li>
+                        <li>Interior windows & tracks</li>
+                        <li>Detailed woodwork & doors</li>
+                        <li>48-Hour Inspection Guarantee</li>
+                    </ul>
+                </div>
+
+                <div class="pricing-card">
+                    <h3>The Deluxe Handover</h3>
+                    <div class="price-amount">$780</div>
+                    <p style="color: #999; font-size: 0.9em;">GST Inc.</p>
+                    <ul>
+                        <li>Everything in Bond-Back package</li>
+                        <li>Professional carpet steam clean</li>
+                        <li>Exterior window cleaning</li>
+                        <li>Full wall wash</li>
+                        <li>48-Hour Inspection Guarantee</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact" id="contact">
+        <div class="contact-content">
+            <h2>Get in Touch</h2>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+64226055453">0226 055 453</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Email</h3>
+                    <a href="mailto:boldpropertymaintenance@gmail.com">boldpropertymaintenance@gmail.com</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Service Area</h3>
+                    <p>Palmerston North & Manawatu Region</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 Bold Property Maintenance. All rights reserved.</p>
+        <p>NZBN: 9429053659002 | Public Liability Insurance: BIZ129925</p>
+        <p>Fast, Reliable Same-Week Scheduling | Fully Insured | Locally-Owned Family Business</p>
+    </footer>
+</body>
+</html>
