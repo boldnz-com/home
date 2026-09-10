@@ -1,619 +1,253 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Bold Property Maintenance</title>
-  <meta name="description" content="For all your property maintenance needs in the Palmerston North area. Property maintenance for residential and commercial properties.">
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: system-ui, -apple-system, sans-serif;
-      color: #333;
-      background-color: #f9f9f9;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    /* ── Header ── */
-    header {
-      background-color: #1a4d2e;
-      color: white;
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-    }
-
-    nav {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 1rem 2rem;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    .logo {
-      font-size: 1.5rem;
-      font-weight: bold;
-      letter-spacing: 0.1em;
-    }
-
-    nav ul {
-      list-style: none;
-      display: flex;
-      gap: 2rem;
-    }
-
-    nav a {
-      color: white;
-      text-decoration: none;
-      transition: color 0.3s;
-    }
-
-    nav a:hover {
-      color: #7cb342;
-    }
-
-    /* ── Hero Section ── */
-    .hero {
-      background-color: #1a4d2e;
-      color: white;
-      padding: 6rem 2rem;
-      text-align: center;
-    }
-
-    .hero-content {
-      max-width: 50rem;
-      margin: 0 auto;
-    }
-
-    .hero h1 {
-      font-size: 3rem;
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    .hero p {
-      font-size: 1.25rem;
-      margin-bottom: 2rem;
-      opacity: 0.95;
-    }
-
-    .hero-logo {
-      max-width: 90%;
-      height: auto;
-      margin-bottom: 1.5rem;
-      display: block;
-      margin-left: auto;
-      margin-right: auto;
-    }
-
-    .btn-primary {
-      display: inline-block;
-      background-color: #7cb342;
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .btn-primary:hover {
-      background-color: #9ccc65;
-      transform: translateY(-2px);
-    }
-
-    /* ── Services Section ── */
-    .services {
-      background-color: #f3f4f6;
-      padding: 4rem 2rem;
-    }
-
-    .services-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .services h2 {
-      font-size: 2.25rem;
-      color: #1a4d2e;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-weight: bold;
-    }
-
-    .services-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-    }
-
-    .service-card {
-      background: white;
-      border-radius: 0.5rem;
-      padding: 2rem;
-      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-      transition: all 0.3s;
-    }
-
-    .service-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 10px 15px rgba(0,0,0,0.15);
-    }
-
-    .service-icon {
-      font-size: 2.25rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .service-card h3 {
-      font-size: 1.25rem;
-      color: #1a4d2e;
-      margin-bottom: 0.75rem;
-      font-weight: bold;
-    }
-
-    .service-card p {
-      color: #666;
-      line-height: 1.6;
-    }
-
-    .service-highlight {
-      background-color: #e8f5e9;
-      border-left: 3px solid #7cb342;
-      padding: 0.75rem;
-      margin-top: 1rem;
-      border-radius: 0.25rem;
-      font-size: 0.95rem;
-      color: #2d5016;
-      font-weight: 500;
-    }
-
-    /* ── About Section ── */
-    .about {
-      padding: 4rem 2rem;
-    }
-
-    .about-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .about h2 {
-      font-size: 2.25rem;
-      color: #1a4d2e;
-      margin-bottom: 2.5rem;
-      font-weight: bold;
-    }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .about-text h3 {
-      font-size: 1.5rem;
-      color: #1a4d2e;
-      margin-bottom: 1rem;
-      font-weight: bold;
-    }
-
-    .about-text p {
-      color: #666;
-      margin-bottom: 1rem;
-      line-height: 1.8;
-    }
-
-    .about-box {
-      background-color: #e8f5e9;
-      border-left: 4px solid #7cb342;
-      border-radius: 0.375rem;
-      padding: 2rem;
-    }
-
-    .about-box h4 {
-      font-weight: bold;
-      color: #1a4d2e;
-      margin-bottom: 0.5rem;
-    }
-
-    .about-box p {
-      color: #2d5016;
-      font-weight: 500;
-      margin-bottom: 1.25rem;
-    }
-
-    .about-box ul {
-      list-style: none;
-      color: #2d5016;
-      line-height: 1.8;
-    }
-
-    .about-box li {
-      margin-bottom: 0.25rem;
-    }
-
-    @media (max-width: 768px) {
-      .about-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .hero h1 {
-        font-size: 2rem;
-      }
-
-      nav ul {
-        gap: 1rem;
-      }
-    }
-
-    /* ── Contact Section ── */
-    .contact {
-      background-color: #1a4d2e;
-      color: white;
-      padding: 4rem 2rem;
-    }
-
-    .contact-content {
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-
-    .contact h2 {
-      font-size: 2.25rem;
-      text-align: center;
-      margin-bottom: 3rem;
-      font-weight: bold;
-    }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 3rem;
-    }
-
-    .contact-info h3 {
-      font-size: 1.5rem;
-      margin-bottom: 2rem;
-      font-weight: bold;
-    }
-
-    .contact-item {
-      display: flex;
-      gap: 1rem;
-      margin-bottom: 2rem;
-    }
-
-    .contact-icon {
-      font-size: 1.5rem;
-      flex-shrink: 0;
-    }
-
-    .contact-item h4 {
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .contact-item p {
-      opacity: 0.9;
-    }
-
-    /* ── Form ── */
-    .form-group {
-      margin-bottom: 1.25rem;
-    }
-
-    .form-group label {
-      display: block;
-      font-weight: 600;
-      margin-bottom: 0.25rem;
-    }
-
-    .form-group input,
-    .form-group textarea {
-      width: 100%;
-      padding: 0.75rem;
-      border-radius: 0.375rem;
-      border: none;
-      color: #333;
-      font-family: inherit;
-      font-size: 1rem;
-    }
-
-    .form-group textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
-
-    .form-group input:focus,
-    .form-group textarea:focus {
-      outline: none;
-      box-shadow: 0 0 0 3px rgba(124, 179, 66, 0.5);
-    }
-
-    .form-submit {
-      width: 100%;
-      margin-top: 1rem;
-      display: inline-block;
-      background-color: #7cb342;
-      color: white;
-      padding: 1rem 2.5rem;
-      border-radius: 0.375rem;
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.2s;
-      border: none;
-      cursor: pointer;
-      font-size: 1rem;
-    }
-
-    .form-submit:hover {
-      background-color: #9ccc65;
-      transform: translateY(-2px);
-    }
-
-    .success-message {
-      background-color: #c8e6c9;
-      border: 1px solid #81c784;
-      color: #2e7d32;
-      border-radius: 0.5rem;
-      padding: 1.5rem;
-      text-align: center;
-      margin-bottom: 1rem;
-    }
-
-    .success-message .check {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .success-message h3 {
-      font-size: 1.25rem;
-      font-weight: bold;
-      margin-bottom: 0.5rem;
-    }
-
-    .error-message {
-      background-color: #ffcdd2;
-      border: 1px solid #ef5350;
-      color: #c62828;
-      padding: 0.75rem;
-      border-radius: 0.375rem;
-      margin-bottom: 1rem;
-    }
-
-    .hidden {
-      display: none;
-    }
-
-    @media (max-width: 768px) {
-      .contact-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    /* ── Footer ── */
-    footer {
-      background-color: #0d2818;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-
-    footer p {
-      margin-bottom: 0.5rem;
-    }
-
-    footer .footer-secondary {
-      opacity: 0.75;
-      font-size: 0.875rem;
-      margin-bottom: 0.75rem;
-    }
-
-    footer .footer-links {
-      display: flex;
-      justify-content: center;
-      gap: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    footer .footer-links a {
-      color: #7cb342;
-      text-decoration: none;
-      font-size: 0.875rem;
-    }
-
-    footer .footer-links a:hover {
-      text-decoration: underline;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome - Pneuma Worx & Bold Property</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .header h1 {
+            font-size: 2.5em;
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-weight: 700;
+        }
+
+        .header p {
+            font-size: 1.1em;
+            color: #555;
+            font-weight: 300;
+        }
+
+        .divider {
+            width: 80px;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+            margin: 20px auto 40px;
+        }
+
+        .businesses {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .business-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            cursor: pointer;
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .business-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+
+        .card-header {
+            padding: 40px 30px;
+            color: white;
+            text-align: center;
+        }
+
+        .card-header.pneuma {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .card-header.bold {
+            background: linear-gradient(135deg, #7cb342 0%, #9ccc65 100%);
+        }
+
+        .card-header h2 {
+            font-size: 2em;
+            margin-bottom: 5px;
+        }
+
+        .card-header p {
+            font-size: 0.95em;
+            opacity: 0.95;
+            font-weight: 300;
+        }
+
+        .card-body {
+            padding: 30px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card-description {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 20px;
+            flex: 1;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+
+        .card-features li {
+            padding: 8px 0;
+            color: #555;
+            font-size: 0.95em;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .card-features li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        .card-features.pneuma li:before {
+            color: #667eea;
+        }
+
+        .card-features.bold li:before {
+            color: #7cb342;
+        }
+
+        .card-cta {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            align-self: flex-start;
+        }
+
+        .card-cta.pneuma {
+            background: #667eea;
+            color: white;
+        }
+
+        .card-cta.pneuma:hover {
+            background: #5568d3;
+            transform: translateX(4px);
+        }
+
+        .card-cta.bold {
+            background: #7cb342;
+            color: white;
+        }
+
+        .card-cta.bold:hover {
+            background: #6ba330;
+            transform: translateX(4px);
+        }
+
+        .footer {
+            text-align: center;
+            color: #666;
+            font-size: 0.9em;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .businesses {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .card-header h2 {
+                font-size: 1.7em;
+            }
+        }
+    </style>
 </head>
 <body>
+    <div class="container">
+        <div class="header">
+            <h1>Welcome</h1>
+            <div class="divider"></div>
+            <p>Choose your service provider</p>
+        </div>
 
-  <!-- ── Header ── -->
-  <header>
-    <nav>
-      <div class="logo">🌿 BOLD</div>
-      <ul>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+        <div class="businesses">
+            <a href="pneuma-worx.html" class="business-card">
+                <div class="card-header pneuma">
+                    <h2>Pneuma Worx</h2>
+                    <p>Strategic Consulting & Project Management</p>
+                </div>
+                <div class="card-body">
+                    <div class="card-description">
+                        Professional strategic consulting and project management services for Wellington-based organizations. Delivering excellence through thoughtful expertise and collaborative solutions.
+                    </div>
+                    <ul class="card-features pneuma">
+                        <li>Strategic Planning & Advisory</li>
+                        <li>Project Management</li>
+                        <li>Organizational Development</li>
+                        <li>Wellington-based Services</li>
+                    </ul>
+                    <span class="card-cta pneuma">Explore Services →</span>
+                </div>
+            </a>
 
-  <!-- ── Hero Section ── -->
-  <section class="hero">
-    <div class="hero-content">
-      <img src="Logo.png" alt="Bold Property Maintenance" class="hero-logo">
-      
-      <p>🏡 Residential Upkeep • 🏢 Commercial Care • 🌿 Garden & Grounds • 💧 Exterior Cleaning 🏡 Servicing the Palmerston North area 🏡</p>
-      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+            <a href="bold-property.html" class="business-card">
+                <div class="card-header bold">
+                    <h2>Bold Property</h2>
+                    <p>Professional Property Maintenance</p>
+                </div>
+                <div class="card-body">
+                    <div class="card-description">
+                        Expert property maintenance and end-of-tenancy cleaning services across the Manawatu region. Clean, thorough, locally-owned expertise you can trust.
+                    </div>
+                    <ul class="card-features bold">
+                        <li>End-of-Tenancy Cleaning</li>
+                        <li>Bond Clean Services</li>
+                        <li>Property Maintenance</li>
+                        <li>Manawatu Region</li>
+                    </ul>
+                    <span class="card-cta bold">View Services →</span>
+                </div>
+            </a>
+        </div>
+
+        <div class="footer">
+            <p>&copy; 2026 Pneuma Worx & Bold Property. All rights reserved.</p>
+        </div>
     </div>
-  </section>
-
-<!-- Elfsight Google Reviews | Untitled Google Reviews -->
-<script src="https://elfsightcdn.com/platform.js" async></script>
-<div class="elfsight-app-849974f9-10a0-45bf-801c-9461f17b9dbf" data-elfsight-app-lazy></div>
-
-  <!-- ── Services Section ── -->
-  <section id="services" class="services">
-    <div class="services-content">
-      <h2>Our Services</h2>
-      <div class="services-grid">
-          <div class="service-card">
-          <div class="service-icon">🏠</div>
-          <h3>End of Tenancy House Cleaning</h3>
-          <p>Comprehensive interior and exterior house cleaning services. From windows to walls, we ensure every corner of your home is spotless and fresh.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">💧</div>
-          <h3>Pressure Cleaning</h3>
-          <p>Pressure cleaning for driveways, pathways, and patios. Remove dirt, mold, and algae to restore your property's appearance.</p>
-          <div class="service-highlight">💡 Perfect for prepping your home for sale—refresh your exterior and make a great first impression (for that photo shoot)!</div>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🌱</div>
-          <h3>Lawn Mowing & Care</h3>
-          <p>Regular lawn mowing, edging, and maintenance to keep your property looking pristine year-round.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">✂️</div>
-          <h3>Hedge Trimming</h3>
-          <p>Professional hedge trimming & edging to maintain clean lines and healthy plants.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🍃</div>
-          <h3>General Garden Maintenance</h3>
-          <p>Leaf blowing, rubbish removal, and general tidying services. Perfect for keeping your outdoor spaces clean and well-maintained.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">📅</div>
-          <h3>Seasonal Packages</h3>
-          <p>Flexible monthly or seasonal maintenance plans tailored to your property's needs. Save money with ongoing service agreements.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">🏢</div>
-          <h3>Commercial Properties</h3>
-          <p>Reliable maintenance for investment properties, rental homes, and commercial developments. Fast, professional, and fully insured.</p>
-        </div>
-        <div class="service-card">
-          <div class="service-icon">⚡</div>
-          <h3>Quick Turnarounds</h3>
-          <p>We pride ourselves on fast, reliable service. Same-week scheduling available for most requests.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact Section ── -->
-  <section id="contact" class="contact">
-    <div class="contact-content">
-      <h2>Get in Touch</h2>
-      <div class="contact-grid">
-        <div class="contact-info">
-          <h3>Contact Bold</h3>
-          <div class="contact-item">
-            <span class="contact-icon">📞</span>
-            <div>
-              <h4>Phone</h4>
-              <p>022 6055 453</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">✉️</span>
-            <div>
-              <h4>Email</h4>
-              <p>boldpropertymaintenance@gmail.com</p>
-            </div>
-          </div>
-          <div class="contact-item">
-            <span class="contact-icon">📍</span>
-            <div>
-              <h4>Service Area</h4>
-              <p>Palmerston North & Manawatu Area</p>
-            </div>
-          </div>
-        </div>
-
-        <form action="https://api.web3forms.com/submit" method="POST">
-          <input type="hidden" name="access_key" value="956c973a-38b1-4f72-aa4b-7004187ffbe2">
-
-          <div class="form-group">
-            <label for="name">Your Name</label>
-            <input type="text" id="name" name="name" required>
-          </div>
-
-          <div class="form-group">
-            <label for="email">Email Address</label>
-            <input type="email" id="email" name="email" required>
-          </div>
-
-          <div class="form-group">
-            <label for="phone">Phone Number</label>
-            <input type="tel" id="phone" name="phone">
-          </div>
-
-          <div class="form-group">
-            <label for="message">Tell us about your property</label>
-            <textarea id="message" name="message" required></textarea>
-          </div>
-
-          <input type="hidden" name="redirect" value="https://web3forms.com/success">
-          <button type="submit" class="btn-primary form-submit">Request a Free Quote</button>
-        </form>
-      </div>
-    </div>
-  </section>
-
- <!-- ── About Section ── -->
-  <section id="about" class="about">
-    <div class="about-content">
-      <h2>About Bold</h2>
-      <div class="about-grid">
-        <div class="about-text">
-          <h3>Who We Are</h3>
-          <p>Bold Property Maintenance was founded on a simple belief: every property deserves to look its best!</p>
-          <p>We are a locally-owned maintenance business that combines professional, high-quality service with genuine community commitment.</p>
-          <p>When you choose Bold, you're supporting a local family business with strong ties to the wider community.</p>
-        </div>
-        <div class="about-box">
-          <h4>Why Choose Us?</h4>
-          <ul>
-            <li>✓ Fully insured & compliant</li>
-            <li>✓ Professional & experienced</li>
-            <li>✓ Local community focus</li>
-            <li>✓ Flexible scheduling</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ── Footer ── -->
-  <footer>
-    <p>&copy; 2026 Bold Property Maintenance.</p>
-    <p class="footer-secondary">NZBN: 9429053659002 | Public Liability Insurance: BIZ129925</p>
-    <div class="footer-links">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Service</a>
-      <a href="#">Health & Safety</a>
-    </div>
-  </footer>
-
 </body>
 </html>
