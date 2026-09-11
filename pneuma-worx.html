@@ -28,14 +28,15 @@
             line-height: 1.6;
         }
 
+        /* Header & Navigation */
         header {
             background: #ffffff;
             border-bottom: 1px solid var(--border-light);
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 1rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+            padding: 1.2rem 0;
+            box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
         }
 
         nav {
@@ -47,8 +48,28 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 1.5em;
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .logo-image {
+            height: 50px;
+            width: auto;
+            border-radius: 8px;
+            background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: bold;
+            font-size: 0.8em;
+            padding: 0 1rem;
+        }
+
+        .logo-text {
+            font-size: 1.4em;
             font-weight: 700;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             -webkit-background-clip: text;
@@ -60,7 +81,7 @@
         nav ul {
             list-style: none;
             display: flex;
-            gap: 2rem;
+            gap: 2.5rem;
         }
 
         nav a {
@@ -75,121 +96,149 @@
             color: var(--primary);
         }
 
+        /* Hero Section */
         .hero {
             background: linear-gradient(135deg, rgba(102, 126, 234, 0.04) 0%, rgba(118, 75, 162, 0.04) 100%);
-            padding: 6rem 2rem;
+            padding: 7rem 2rem;
             text-align: center;
         }
 
         .hero-content {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
         }
 
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 1rem;
+            font-size: 3.2em;
+            margin-bottom: 1.2rem;
             font-weight: 700;
             line-height: 1.2;
+            color: var(--text-dark);
         }
 
         .hero-subtitle {
-            font-size: 1.3em;
+            font-size: 1.4em;
             color: var(--text-light);
-            margin-bottom: 2rem;
-            font-weight: 300;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
         }
 
         .hero-description {
-            font-size: 1.05em;
+            font-size: 1.08em;
             color: var(--text-light);
             line-height: 1.8;
-            margin-bottom: 2rem;
-            max-width: 600px;
+            margin-bottom: 2.5rem;
+            max-width: 700px;
             margin-left: auto;
             margin-right: auto;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 0.9rem 2rem;
+            padding: 1rem 2.5rem;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 8px;
             font-weight: 600;
+            font-size: 1.05em;
             transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            box-shadow: 0 6px 25px rgba(102, 126, 234, 0.35);
         }
 
         .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 35px rgba(102, 126, 234, 0.45);
         }
 
+        /* Services Section */
         .services {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
         }
 
         .section-title {
-            font-size: 2.2em;
+            font-size: 2.5em;
             margin-bottom: 1rem;
             text-align: center;
             font-weight: 700;
+            color: var(--text-dark);
         }
 
         .section-subtitle {
             text-align: center;
             color: var(--text-light);
-            font-size: 1.05em;
-            margin-bottom: 3rem;
-            max-width: 600px;
+            font-size: 1.1em;
+            margin-bottom: 4rem;
+            max-width: 650px;
             margin-left: auto;
             margin-right: auto;
+            line-height: 1.7;
         }
 
         .services-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 2rem;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2.5rem;
         }
 
         .service-card {
             background: var(--light-bg);
             border: 1px solid var(--border-light);
-            border-radius: 8px;
-            padding: 2rem;
+            border-radius: 12px;
+            padding: 2.5rem;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--accent));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
         }
 
         .service-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.1);
-            transform: translateY(-4px);
+            box-shadow: 0 12px 35px rgba(102, 126, 234, 0.12);
+            transform: translateY(-6px);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
         }
 
         .service-icon {
-            font-size: 2.5em;
-            margin-bottom: 1rem;
+            font-size: 2.8em;
+            margin-bottom: 1.2rem;
+            display: inline-block;
         }
 
         .service-card h3 {
-            font-size: 1.3em;
-            margin-bottom: 0.8rem;
+            font-size: 1.4em;
+            margin-bottom: 1rem;
             color: var(--text-dark);
+            font-weight: 600;
         }
 
         .service-card p {
             color: var(--text-light);
-            line-height: 1.7;
+            line-height: 1.8;
+            font-size: 1em;
         }
 
+        /* About Section */
         .about {
-            background: var(--light-bg);
-            padding: 4rem 2rem;
+            background: linear-gradient(135deg, var(--light-bg) 0%, #ffffff 100%);
+            padding: 6rem 2rem;
         }
 
         .about-content {
@@ -197,126 +246,152 @@
             margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            gap: 4rem;
             align-items: center;
         }
 
         .about h2 {
-            font-size: 2.2em;
-            margin-bottom: 1.5rem;
+            font-size: 2.5em;
+            margin-bottom: 2rem;
             font-weight: 700;
+            color: var(--text-dark);
         }
 
         .about p {
             color: var(--text-light);
-            margin-bottom: 1rem;
-            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            line-height: 1.85;
             font-size: 1.05em;
         }
 
-        .about-image {
+        .about p:first-of-type {
+            font-size: 1.15em;
+            color: var(--primary);
+            font-weight: 500;
+        }
+
+        .about-image-container {
+            position: relative;
+            height: 450px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.2);
+        }
+
+        .about-image-placeholder {
             width: 100%;
-            height: 300px;
+            height: 100%;
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2em;
             text-align: center;
-            padding: 2rem;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.2);
+            padding: 3rem;
+            font-size: 1.3em;
+            font-weight: 500;
         }
 
-        .pricing {
+        .about-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Values Section */
+        .values {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
-            text-align: center;
+            padding: 5rem 2rem;
         }
 
-        .pricing-card {
+        .values-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .value-card {
+            padding: 2rem;
+            border-radius: 12px;
             background: white;
             border: 2px solid var(--border-light);
-            border-radius: 8px;
-            padding: 2rem;
-            max-width: 400px;
-            margin: 0 auto;
+            text-align: center;
             transition: all 0.3s ease;
         }
 
-        .pricing-card:hover {
+        .value-card:hover {
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.1);
         }
 
-        .price {
+        .value-icon {
             font-size: 3em;
-            font-weight: 700;
-            color: var(--primary);
-            margin: 1rem 0;
+            margin-bottom: 1rem;
         }
 
-        .price-period {
+        .value-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 1rem;
+            color: var(--text-dark);
+            font-weight: 600;
+        }
+
+        .value-card p {
             color: var(--text-light);
-            font-size: 1em;
+            line-height: 1.7;
         }
 
-        .pricing-features {
-            list-style: none;
-            margin: 2rem 0;
-            text-align: left;
-        }
-
-        .pricing-features li {
-            padding: 0.8rem 0;
-            color: var(--text-light);
-            border-bottom: 1px solid var(--border-light);
-        }
-
-        .pricing-features li:last-child {
-            border-bottom: none;
-        }
-
+        /* Contact Section */
         .contact {
             background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
             color: white;
-            padding: 4rem 2rem;
+            padding: 5rem 2rem;
             text-align: center;
         }
 
         .contact h2 {
-            font-size: 2.2em;
+            font-size: 2.5em;
             margin-bottom: 1rem;
             font-weight: 700;
         }
 
-        .contact p {
+        .contact-description {
             font-size: 1.1em;
-            margin-bottom: 2rem;
+            margin-bottom: 3rem;
             opacity: 0.95;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
         }
 
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             max-width: 1200px;
             margin: 0 auto;
-            margin-top: 3rem;
         }
 
         .contact-item {
-            background: rgba(255, 255, 255, 0.1);
-            padding: 1.5rem;
-            border-radius: 6px;
+            background: rgba(255, 255, 255, 0.12);
+            padding: 2rem;
+            border-radius: 8px;
             backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-item:hover {
+            background: rgba(255, 255, 255, 0.18);
+            transform: translateY(-4px);
         }
 
         .contact-item h3 {
-            font-size: 1.1em;
-            margin-bottom: 0.5rem;
+            font-size: 1.2em;
+            margin-bottom: 0.8rem;
+            font-weight: 600;
         }
 
         .contact-item a {
@@ -324,29 +399,47 @@
             text-decoration: none;
             font-weight: 500;
             transition: opacity 0.3s ease;
+            display: inline-block;
+            font-size: 1.05em;
         }
 
         .contact-item a:hover {
             opacity: 0.8;
         }
 
-        footer {
-            background: var(--text-dark);
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9em;
-            opacity: 0.8;
+        .contact-item p {
+            font-size: 1em;
+            opacity: 0.95;
         }
 
+        /* Footer */
+        footer {
+            background: rgba(44, 62, 80, 0.95);
+            color: white;
+            text-align: center;
+            padding: 2.5rem;
+            font-size: 0.9em;
+            opacity: 0.9;
+        }
+
+        footer p {
+            margin: 0.5rem 0;
+        }
+
+        /* Responsive */
         @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
             nav ul {
                 gap: 1.5rem;
                 font-size: 0.9em;
             }
 
             .hero h1 {
-                font-size: 2em;
+                font-size: 2.2em;
             }
 
             .hero-subtitle {
@@ -354,17 +447,20 @@
             }
 
             .section-title {
-                font-size: 1.8em;
+                font-size: 2em;
             }
 
             .about-content {
                 grid-template-columns: 1fr;
+                gap: 2rem;
             }
 
-            .services-grid {
-                grid-template-columns: 1fr;
+            .about-image-container {
+                height: 350px;
             }
 
+            .services-grid,
+            .values-grid,
             .contact-info {
                 grid-template-columns: 1fr;
             }
@@ -372,107 +468,148 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">Pneuma Worx</div>
+            <div class="logo-area">
+                <div class="logo-image">LOGO</div>
+                <div class="logo-text">Pneuma Worx</div>
+            </div>
             <ul>
                 <li><a href="#services">Services</a></li>
                 <li><a href="#about">About</a></li>
-                <li><a href="#pricing">Pricing</a></li>
+                <li><a href="#values">Approach</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
+    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Strategic Consulting &<br>Project Management</h1>
-            <p class="hero-subtitle">Professional services for New Zealand!</p>
+            <p class="hero-subtitle">Bringing clarity and excellence to your strategic challenges</p>
             <p class="hero-description">
-                Pneuma Worx brings expertise in strategic planning, organizational development, and project delivery. 
-                We work collaboratively to help your organization achieve its objectives with thoughtful, 
-                evidence-based solutions.
+                Pneuma Worx delivers expert consulting, thoughtful project management, and organizational development to help your Wellington organization achieve its vision. We believe in the power of clarity, collaboration, and sustainable results.
             </p>
-            <a href="#contact" class="cta-button">Get in Touch</a>
+            <a href="#contact" class="cta-button">Start a Conversation</a>
         </div>
     </section>
 
+    <!-- Services Section -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
-        <p class="section-subtitle">Comprehensive consulting and project management tailored to your needs</p>
+        <h2 class="section-title">What We Offer</h2>
+        <p class="section-subtitle">Comprehensive consulting services designed to drive organizational success and sustainable growth</p>
         
         <div class="services-grid">
             <div class="service-card">
                 <div class="service-icon">📋</div>
                 <h3>Strategic Planning</h3>
-                <p>Develop clear organizational strategies that align with your vision and create actionable roadmaps for success.</p>
+                <p>Develop clear, actionable organizational strategies that align with your vision and create compelling roadmaps for sustainable success.</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🎯</div>
                 <h3>Project Management</h3>
-                <p>End-to-end project delivery with attention to scope, timeline, and quality. We ensure your projects deliver value.</p>
+                <p>End-to-end delivery with meticulous attention to scope, timeline, and quality. We ensure your projects deliver measurable value.</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🏢</div>
                 <h3>Organizational Development</h3>
-                <p>Support your team and organizational structure to operate effectively and adapt to changing environments.</p>
+                <p>Strengthen your team and organizational structure to operate effectively, adapt to change, and thrive in dynamic environments.</p>
             </div>
 
             <div class="service-card">
                 <div class="service-icon">💼</div>
                 <h3>Advisory Services</h3>
-                <p>Expert guidance on strategic initiatives, organizational challenges, and transformation opportunities.</p>
+                <p>Expert guidance on strategic initiatives, organizational challenges, and transformation opportunities that matter most.</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">📊</div>
                 <h3>Analysis & Planning</h3>
-                <p>Data-driven analysis and forecasting to inform decision-making and strategic planning processes.</p>
+                <p>Data-driven analysis and strategic forecasting to inform decision-making and unlock new possibilities.</p>
             </div>
             
             <div class="service-card">
                 <div class="service-icon">🤝</div>
                 <h3>Stakeholder Engagement</h3>
-                <p>Facilitate effective communication and engagement across all levels of your organization and beyond.</p>
+                <p>Facilitate effective communication and alignment across all levels of your organization and key external partners.</p>
             </div>
         </div>
     </section>
 
+    <!-- About Section -->
     <section class="about" id="about">
         <div class="about-content">
             <div>
                 <h2>About Pneuma Worx</h2>
+                <p>We exist to help Wellington-based organizations breathe clearly and move forward with confidence.</p>
                 <p>
-                    Pneuma Worx is a professional consulting practice covering the Central & Lower North Island, New Zealand. 
-                    We specialize in helping organizations achieve their strategic objectives through thoughtful 
-                    consulting, expert project management, and organizational development.
+                    Pneuma Worx is a professional consulting practice built on the belief that clarity, collaboration, and thoughtful expertise drive real results. We partner with organizations facing strategic challenges, managing complex projects, or pursuing organizational transformation.
                 </p>
                 <p>
-                    Our approach emphasizes clarity, collaboration, and delivery. We work closely with our clients 
-                    to understand their unique challenges and opportunities, then apply our expertise to create 
-                    practical, sustainable solutions.
+                    Our approach combines analytical rigor with genuine partnership. We take time to understand your unique context, listen carefully to your ambitions, and craft solutions that are both practical and sustainable. Whether you're planning a strategic initiative, navigating organizational change, or building capability for the future, we're here to help.
                 </p>
                 <p>
-                    Whether you're planning a strategic initiative, managing a complex project, or building 
-                    organizational capability, we're here to help your organization breathe (and thrive)!.
+                    We believe the best outcomes come when diverse perspectives converge around shared purpose. That's what we bring to every engagement.
                 </p>
             </div>
-            <div class="about-image">
-                Strategic Excellence Through Thoughtful Partnership
+            <div class="about-image-container">
+                <!-- Replace with actual image when available -->
+                <div class="about-image-placeholder">
+                    Professional Team Image<br><br><small>(Photo placeholder - professional team collaboration)</small>
+                </div>
+                <!-- Or uncomment below to use actual image when available -->
+                <!-- <img src="/images/pneuma-team.jpg" alt="Pneuma Worx Team" class="about-image"> -->
             </div>
         </div>
     </section>
 
+    <!-- Values/Approach Section -->
+    <section class="values" id="values">
+        <h2 class="section-title">Our Approach</h2>
+        <p class="section-subtitle">Strategic Excellence Through Thoughtful Partnership</p>
+        
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon">🎯</div>
+                <h3>Clear-Eyed</h3>
+                <p>We bring honest perspective and analytical rigor to every challenge, helping you see clearly what needs attention.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🤝</div>
+                <h3>Collaborative</h3>
+                <p>We work alongside your team, respecting your expertise while bringing fresh insights and proven methodologies.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">✨</div>
+                <h3>Practical</h3>
+                <p>Every recommendation is grounded in reality. We focus on what's achievable and what matters most to your success.</p>
+            </div>
+            
+            <div class="value-card">
+                <div class="value-icon">🌱</div>
+                <h3>Sustainable</h3>
+                <p>We design solutions that stick. Our goal is lasting change that builds capability within your organization.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
-        <p>Ready to discuss your consulting needs? We'd love to hear from you.</p>
+        <h2>Let's Talk</h2>
+        <p class="contact-description">
+            Ready to explore how Pneuma Worx can support your organization's strategic priorities? We'd like to hear from you.
+        </p>
         
         <div class="contact-info">
             <div class="contact-item">
                 <h3>Email</h3>
-                <a href="mailto:pneuma.worx1@gmail.com">pneuma.worx1@gmail.com</a>
+                <a href="mailto:contact@pneumaworx.co.nz">contact@pneumaworx.co.nz</a>
             </div>
             
             <div class="contact-item">
@@ -481,14 +618,16 @@
             </div>
             
             <div class="contact-item">
-                <h3>Professional</h3>
-                <p>Consulting & Project Management</p>
+                <h3>Rate</h3>
+                <p>$147 per hour<br><small>Strategic Consulting & Project Management</small></p>
             </div>
         </div>
     </section>
 
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2026 Pneuma Worx. All rights reserved. | Strategic Consulting & Project Management, Wellington</p>
+        <p>&copy; 2026 Pneuma Worx. All rights reserved.</p>
+        <p>Strategic Consulting & Project Management | Wellington, New Zealand</p>
     </footer>
 </body>
 </html>
