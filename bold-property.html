@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bold Property Maintenance - Professional Lawn & Garden Care</title>
+    <title>Bold Property Maintenance - End-of-Tenancy & Bond Cleaning</title>
     <style>
         * {
             margin: 0;
@@ -11,75 +11,61 @@
             box-sizing: border-box;
         }
 
-        :root {
-            --primary: #7cb342;
-            --primary-light: #9ccc65;
-            --primary-dark: #2d5a2d;
-            --text-dark: #2c3e50;
-            --text-light: #5a6c7d;
-            --light-bg: #f8fafb;
-            --border-light: #e8ecf1;
-        }
-
         body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', sans-serif;
-            color: var(--text-dark);
-            background: #ffffff;
-            line-height: 1.6;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
         }
 
         header {
-            background: var(--primary);
+            background: #7cb342;
             color: white;
             position: sticky;
             top: 0;
             z-index: 50;
-            padding: 1rem 0;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         nav {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 2rem;
+            padding: 1rem 2rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
 
         .logo {
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            color: white;
             display: flex;
             align-items: center;
             gap: 0.5rem;
-        }
-
-        .logo img {
-            height: 40px;
-            width: auto;
-            border-radius: 4px;
         }
 
         nav ul {
             list-style: none;
             display: flex;
             gap: 2rem;
+            margin: 0;
         }
 
         nav a {
-            text-decoration: none;
             color: white;
-            font-weight: 500;
-            transition: color 0.3s ease;
+            text-decoration: none;
+            transition: opacity 0.3s;
+            font-size: 0.95rem;
         }
 
         nav a:hover {
-            color: #d4f1d4;
+            opacity: 0.8;
         }
 
         .hero {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            background: linear-gradient(135deg, #7cb342 0%, #9ccc65 100%);
             color: white;
-            padding: 6rem 2rem;
+            padding: 4rem 2rem;
             text-align: center;
         }
 
@@ -89,74 +75,52 @@
         }
 
         .hero h1 {
-            font-size: 3em;
-            margin-bottom: 1rem;
+            font-size: 2.5em;
+            margin-bottom: 0.5rem;
             font-weight: 700;
-            line-height: 1.2;
         }
 
-        .hero img {
-            max-width: 400px;
-            width: 100%;
-            border-radius: 12px;
-            margin: 2rem 0;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3em;
+        .hero-tagline {
+            font-size: 1.2em;
             margin-bottom: 1rem;
-            font-weight: 300;
             opacity: 0.95;
-            letter-spacing: 0.05em;
         }
 
         .hero-description {
             font-size: 1.05em;
-            line-height: 1.8;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             opacity: 0.9;
+            line-height: 1.6;
         }
 
         .cta-button {
             display: inline-block;
-            padding: 0.9rem 2rem;
             background: white;
-            color: var(--primary);
+            color: #7cb342;
+            padding: 0.8rem 1.5rem;
             text-decoration: none;
-            border-radius: 6px;
+            border-radius: 4px;
             font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
         }
 
         .cta-button:hover {
-            background: #f0f0f0;
+            background: #f5f5f5;
             transform: translateY(-2px);
         }
 
         .services {
             max-width: 1200px;
             margin: 0 auto;
-            padding: 4rem 2rem;
+            padding: 3rem 2rem;
+            background: #f9f9f9;
         }
 
-        .section-title {
-            font-size: 2.2em;
-            margin-bottom: 1rem;
+        .services h2 {
+            font-size: 2em;
             text-align: center;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .section-subtitle {
-            text-align: center;
-            color: var(--text-light);
-            font-size: 1.05em;
             margin-bottom: 3rem;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
+            color: #333;
         }
 
         .services-grid {
@@ -166,178 +130,200 @@
         }
 
         .service-card {
-            background: var(--light-bg);
-            border: 1px solid var(--border-light);
-            border-radius: 8px;
+            background: white;
             padding: 2rem;
-            transition: all 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            transition: all 0.3s;
         }
 
         .service-card:hover {
-            border-color: var(--primary);
-            box-shadow: 0 8px 25px rgba(124, 179, 66, 0.1);
+            box-shadow: 0 4px 12px rgba(124, 179, 66, 0.2);
             transform: translateY(-4px);
         }
 
         .service-card h3 {
+            color: #7cb342;
             font-size: 1.3em;
-            margin-bottom: 0.8rem;
-            color: var(--primary);
+            margin-bottom: 1rem;
         }
 
         .service-card p {
-            color: var(--text-light);
-            line-height: 1.7;
+            color: #666;
+            line-height: 1.6;
+            font-size: 0.95em;
         }
 
         .about {
-            background: var(--light-bg);
-            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 2rem;
+        }
+
+        .about h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 2rem;
+            color: #333;
         }
 
         .about-content {
-            max-width: 1200px;
-            margin: 0 auto;
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 3rem;
             align-items: center;
         }
 
-        .about h2 {
-            font-size: 2.2em;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-            color: var(--text-dark);
-        }
-
-        .about p {
-            color: var(--text-light);
+        .about-text p {
+            color: #666;
             margin-bottom: 1rem;
-            line-height: 1.8;
-            font-size: 1.05em;
+            line-height: 1.7;
         }
 
         .about-image {
-            width: 100%;
+            background: #7cb342;
             height: 300px;
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.2em;
+            font-size: 1.1em;
             text-align: center;
             padding: 2rem;
-            box-shadow: 0 10px 30px rgba(124, 179, 66, 0.2);
+        }
+
+        .pricing {
+            background: #f9f9f9;
+            padding: 3rem 2rem;
+        }
+
+        .pricing-content {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .pricing h2 {
+            font-size: 2em;
+            text-align: center;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .pricing-tiers {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border: 2px solid #ddd;
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            transition: all 0.3s;
+        }
+
+        .pricing-card:hover {
+            border-color: #7cb342;
+            box-shadow: 0 4px 15px rgba(124, 179, 66, 0.2);
+        }
+
+        .pricing-card h3 {
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 1rem;
+        }
+
+        .price-amount {
+            font-size: 2.5em;
+            color: #7cb342;
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .pricing-card ul {
+            list-style: none;
+            margin: 2rem 0;
+            text-align: left;
+        }
+
+        .pricing-card li {
+            padding: 0.7rem 0;
+            color: #666;
+            border-bottom: 1px solid #eee;
+        }
+
+        .pricing-card li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-card li:before {
+            content: "✓ ";
+            color: #7cb342;
+            font-weight: bold;
+            margin-right: 0.5rem;
         }
 
         .contact {
-            background: var(--primary);
+            background: #7cb342;
             color: white;
-            padding: 4rem 2rem;
-        }
-
-        .contact h2 {
-            font-size: 2.2em;
-            margin-bottom: 1rem;
-            font-weight: 700;
+            padding: 3rem 2rem;
             text-align: center;
         }
 
         .contact-content {
             max-width: 1200px;
             margin: 0 auto;
+        }
+
+        .contact h2 {
+            font-size: 2em;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
         }
 
-        .contact-info h3 {
-            font-size: 1.1em;
-            margin-bottom: 1rem;
+        .contact-item h3 {
+            margin-bottom: 0.5rem;
         }
 
-        .contact-info p {
-            margin-bottom: 1rem;
-            opacity: 0.95;
-        }
-
-        .contact-info a {
+        .contact-item a {
             color: white;
             text-decoration: none;
             font-weight: 500;
-            transition: opacity 0.3s ease;
         }
 
-        .contact-info a:hover {
+        .contact-item a:hover {
             opacity: 0.8;
-            text-decoration: underline;
-        }
-
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-        }
-
-        .contact-form input,
-        .contact-form textarea {
-            padding: 0.9rem;
-            border: none;
-            border-radius: 6px;
-            font-size: 1em;
-            font-family: inherit;
-        }
-
-        .contact-form button {
-            padding: 0.9rem 2rem;
-            background: white;
-            color: var(--primary);
-            border: none;
-            border-radius: 6px;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .contact-form button:hover {
-            background: #f0f0f0;
-            transform: translateY(-2px);
         }
 
         footer {
-            background: var(--primary-dark);
+            background: #2d5a2d;
             color: white;
             text-align: center;
             padding: 2rem;
-            font-size: 0.9em;
+            font-size: 0.85em;
         }
 
-        footer img {
-            height: 40px;
-            width: auto;
-            border-radius: 4px;
-            margin-bottom: 1rem;
+        footer p {
+            margin: 0.5rem 0;
         }
 
         footer a {
             color: white;
             text-decoration: none;
-            transition: opacity 0.3s ease;
+            margin: 0 1rem;
         }
 
         footer a:hover {
             opacity: 0.8;
-        }
-
-        .footer-links {
-            display: flex;
-            justify-content: center;
-            gap: 1.5rem;
-            flex-wrap: wrap;
-            margin-top: 1rem;
         }
 
         @media (max-width: 768px) {
@@ -347,138 +333,121 @@
             }
 
             .hero h1 {
-                font-size: 2em;
-            }
-
-            .hero-subtitle {
-                font-size: 1.1em;
-            }
-
-            .section-title {
                 font-size: 1.8em;
             }
 
             .about-content,
-            .contact-content {
+            .contact-info {
                 grid-template-columns: 1fr;
             }
 
-            .services-grid {
+            .services-grid,
+            .pricing-tiers {
                 grid-template-columns: 1fr;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
     <header>
         <nav>
-            <div class="logo">
-                <img src="Logo.png" alt="Bold Property Maintenance">
-            </div>
+            <a href="index.html" class="logo">← Back to Directory</a>
+            <a href="index.html" class="logo" style="margin-left: auto;">
+                Bold Property Maintenance
+            </a>
             <ul>
                 <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
+                <li><a href="#pricing">Pricing</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
             <h1>Bold Property Maintenance</h1>
-            <img src="Logo.png" alt="Bold Property Maintenance">
-            <p class="hero-subtitle">Professional lawn and garden care in the Manawatu area</p>
+            <p class="hero-tagline">Professional lawn and garden care in the Manawatu area</p>
             <p class="hero-description">
-                We are a locally-owned maintenance business that combines professional, high-quality service with genuine community commitment.
+                We are a locally-owned maintenance business that combines professional, high-quality service 
+                with genuine community commitment. Every property deserves to look its best!
             </p>
             <a href="#contact" class="cta-button">Get a Quote Today</a>
         </div>
     </section>
 
-    <!-- Services Section -->
     <section class="services" id="services">
-        <h2 class="section-title">Our Services</h2>
+        <h2>Our Services</h2>
         <div class="services-grid">
             <div class="service-card">
                 <h3>Lawn Maintenance</h3>
-                <p>Regular mowing, edging, and lawn care to keep your property looking pristine.</p>
+                <p>Regular mowing, edging, and lawn care to keep your property looking pristine. Professional techniques and quality equipment ensure excellent results every time.</p>
             </div>
+            
             <div class="service-card">
                 <h3>Garden Care</h3>
-                <p>Planting, weeding, pruning, and seasonal garden maintenance.</p>
+                <p>Planting, weeding, pruning, and seasonal garden maintenance. We help your garden thrive throughout the year with expert horticultural care.</p>
             </div>
+            
             <div class="service-card">
                 <h3>Property Cleaning</h3>
-                <p>Gutter cleaning, fence maintenance, and general property upkeep.</p>
+                <p>Gutter cleaning, fence maintenance, and general property upkeep. Comprehensive cleaning services to maintain your property in top condition.</p>
+            </div>
+
+            <div class="service-card">
+                <h3>End-of-Tenancy Cleaning</h3>
+                <p>Thorough property cleaning and preparation for new tenants. Meet bond requirements and ensure seamless handover with our professional cleaning services.</p>
             </div>
         </div>
     </section>
 
-    <!-- About Section -->
     <section class="about" id="about">
+        <h2>About Bold Property</h2>
         <div class="about-content">
-            <div>
-                <h2>About Bold</h2>
+            <div class="about-text">
                 <p>
-                    When you choose Bold, you're supporting a local family business with strong ties to the wider community.
+                    When you choose Bold Property Maintenance, you're supporting a local family business with 
+                    strong ties to the wider community.
                 </p>
                 <p>
-                    With years of experience and a passion for quality workmanship, we take pride in every project we undertake.
+                    With years of experience and a passion for quality workmanship, we take pride in every project 
+                    we undertake. Your lawn, garden, and property receive the care and attention they deserve.
+                </p>
+                <p>
+                    Serving the Manawatu region with reliability, professionalism, and genuine care for our clients and their properties.
                 </p>
             </div>
             <div class="about-image">
-                Your lawn care expertise
+                Your Property Care Experts
             </div>
         </div>
-    </section>
 
-    <!-- Contact Section -->
     <section class="contact" id="contact">
-        <h2>Get in Touch</h2>
         <div class="contact-content">
+            <h2>Get in Touch</h2>
+            
             <div class="contact-info">
-                <h3>Contact Information</h3>
-                <p>
-                    <strong>Phone:</strong><br>
-                    <a href="tel:+64226055453">022 605 5453</a>
-                </p>
-                <p>
-                    <strong>Email:</strong><br>
+                <div class="contact-item">
+                    <h3>Phone</h3>
+                    <a href="tel:+64226055453">0226 055 453</a>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Email</h3>
                     <a href="mailto:boldpropertymaintenance@gmail.com">boldpropertymaintenance@gmail.com</a>
-                </p>
-                <p>
-                    <strong>Location:</strong><br>
-                    Palmerston North, New Zealand
-                </p>
-            </div>
-            <div>
-                <h3>Quick Contact Form</h3>
-                <form class="contact-form">
-                    <input type="text" placeholder="Your Name" required>
-                    <input type="email" placeholder="Your Email" required>
-                    <textarea placeholder="Your Message" rows="4" required></textarea>
-                    <button type="submit">Send Message</button>
-                </form>
+                </div>
+                
+                <div class="contact-item">
+                    <h3>Service Area</h3>
+                    <p>Palmerston North & Manawatu Region</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer>
-        <img src="Logo.png" alt="Bold Property Maintenance">
-        <p>
-            &copy; 2026 Bold Property Maintenance. All rights reserved.
-        </p>
-        <p style="opacity: 0.8; font-size: 0.85em;">
-            NZBN: 9429053659002
-        </p>
-        <div class="footer-links">
-            <a href="#">Privacy Policy</a>
-            <a href="#">Terms of Service</a>
-            <a href="#">Health & Safety</a>
-        </div>
+        <p>&copy; 2026 Bold Property Maintenance. All rights reserved.</p>
+        <p>NZBN: 9429053659002 | Public Liability Insurance: BIZ129925</p>
+        <p>Fast, Reliable Same-Week Scheduling | Fully Insured | Locally-Owned Family Business</p>
     </footer>
 </body>
 </html>
