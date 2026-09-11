@@ -1,479 +1,199 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bold Property Maintenance - Lawn & Garden Care Palmerston North</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            color: #333;
-        }
-
-        /* ── Header ── */
-        header {
-            background: #7cb342;
-            color: white;
-            position: sticky;
-            top: 0;
-            z-index: 50;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        nav {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo-container {
-            background: #7cb342;
-            padding: 0.5rem;
-            border-radius: 4px;
-            display: flex;
-            align-items: center;
-        }
-
-        .logo {
-            height: 2rem;
-            width: auto;
-            border-radius: 4px;
-            mix-blend-mode: screen;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 2rem;
-            margin: 0;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: #e8f5e9;
-        }
-
-        /* ── Hero ── */
-        .hero {
-            background: linear-gradient(135deg, #7cb342 0%, #9ccc65 100%);
-            color: white;
-            padding: 6rem 2rem;
-            text-align: center;
-        }
-
-        .hero-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .hero h1 {
-            font-size: 3rem;
-            font-weight: bold;
-            margin-bottom: 1rem;
-        }
-
-        .hero-logo {
-            width: 100%;
-            max-width: 400px;
-            height: auto;
-            margin: 1.5rem auto;
-            border-radius: 1rem;
-            mix-blend-mode: screen;
-        }
-
-        .hero p {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            opacity: 0.95;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-        }
-
-        .hero-description {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: white;
-            color: #7cb342;
-            font-weight: bold;
-            padding: 0.75rem 2rem;
-            border-radius: 0.5rem;
-            text-decoration: none;
-            transition: background 0.3s;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            background: #e8f5e9;
-        }
-
-        /* ── Services ── */
-        .services {
-            padding: 4rem 2rem;
-            background: #f5f5f5;
-        }
-
-        .services-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .services h2 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-        }
-
-        .service-card {
-            background: white;
-            padding: 2rem;
-            border-radius: 0.5rem;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            transition: box-shadow 0.3s, transform 0.3s;
-        }
-
-        .service-card:hover {
-            box-shadow: 0 4px 16px rgba(124, 179, 66, 0.2);
-            transform: translateY(-4px);
-        }
-
-        .service-card h3 {
-            color: #7cb342;
-            font-size: 1.3rem;
-            margin-bottom: 1rem;
-        }
-
-        .service-card p {
-            color: #666;
-            line-height: 1.6;
-        }
-
-        /* ── About ── */
-        .about {
-            padding: 4rem 2rem;
-        }
-
-        .about-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .about h2 {
-            font-size: 2.2rem;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: #333;
-        }
-
-        .about-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        .about-text p {
-            color: #666;
-            line-height: 1.7;
-            margin-bottom: 1rem;
-            font-size: 1.05rem;
-        }
-
-        .about-image {
-            background: #7cb342;
-            border-radius: 0.5rem;
-            height: 300px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.2rem;
-            text-align: center;
-            padding: 2rem;
-        }
-
-        /* ── Contact ── */
-        .contact {
-            background: #7cb342;
-            color: white;
-            padding: 4rem 2rem;
-            text-align: center;
-        }
-
-        .contact-container {
-            max-width: 1200px;
-            margin: 0 auto;
-        }
-
-        .contact h2 {
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
-        }
-
-        .contact-item h3 {
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-
-        .contact-item a {
-            color: white;
-            text-decoration: none;
-            font-weight: 500;
-        }
-
-        .contact-item a:hover {
-            opacity: 0.8;
-        }
-
-        .contact-form {
-            max-width: 500px;
-            margin: 0 auto;
-        }
-
-        .form-group {
-            margin-bottom: 1rem;
-        }
-
-        .form-group input,
-        .form-group textarea {
-            width: 100%;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 0.25rem;
-            font-family: inherit;
-            font-size: 1rem;
-        }
-
-        .form-group textarea {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        .form-group button {
-            width: 100%;
-            background: white;
-            color: #7cb342;
-            font-weight: bold;
-            padding: 0.75rem;
-            border: none;
-            border-radius: 0.25rem;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .form-group button:hover {
-            background: #e8f5e9;
-        }
-
-        /* ── Footer ── */
-        footer {
-            background: #2d5a2d;
-            color: white;
-            text-align: center;
-            padding: 2rem;
-            font-size: 0.9rem;
-        }
-
-        footer p {
-            margin: 0.5rem 0;
-        }
-
-        footer a {
-            color: white;
-            text-decoration: none;
-            margin: 0 1rem;
-        }
-
-        footer a:hover {
-            opacity: 0.8;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 768px) {
-            nav ul {
-                gap: 1rem;
-                font-size: 0.9rem;
-            }
-
-            .hero h1 {
-                font-size: 2rem;
-            }
-
-            .hero p {
-                font-size: 1rem;
-            }
-
-            .services h2,
-            .about h2,
-            .contact h2 {
-                font-size: 1.8rem;
-            }
-
-            .about-content,
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .services-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-    </style>
-</head>
-<body>
-    <!-- ── Header ── -->
-    <header>
-        <nav>
-            <div class="logo-container">
-                <span style="font-weight: bold; color: white;">BOLD</span>
-            </div>
-            <ul>
-                <li><a href="#services">Services</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+return (
+  <div className="font-sans text-gray-800">
+    {/* ── Header ── */}
+    <header className="bg-[#7cb342] text-white sticky top-0 z-50 shadow-md">
+      <nav className="max-w-6xl mx-auto px-6 py-3 flex justify-between items-center">
+        {/* Logo with leafy green background */}
+        <a href="#" className="flex items-center">
+          <div className="bg-[#7cb342] px-3 py-2 rounded">
+            <img
+              src="/images/bold-logo.jpg"
+              alt="Bold Property Maintenance"
+              className="h-12 w-auto rounded"
+              style={{ mixBlendMode: 'screen' }}
+            />
+          </div>
+        </a>
+        <ul className="flex gap-8 list-none">
+          <li>
+            <a href="#services" className="hover:text-green-100 transition-colors">
+              Services
+            </a>
+          </li>
+          <li>
+            <a href="#about" className="hover:text-green-100 transition-colors">
+              About
+            </a>
+          </li>
+          <li>
+            <a href="#contact" className="hover:text-green-100 transition-colors">
+              Contact
+            </a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
-    <!-- ── Hero ── -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Bold Property Maintenance</h1>
-            <p class="hero-tagline">Professional lawn and garden care in the Manawatu area</p>
-            <p class="hero-description">
-                We are a locally-owned maintenance business that combines professional,
-                high-quality service with genuine community commitment.
+    {/* ── Hero ── */}
+    <section
+      className="text-white py-24 px-8 text-center"
+      style={{ background: 'linear-gradient(135deg, #7cb342 0%, #9ccc65 100%)' }}
+    >
+      <div className="max-w-2xl mx-auto">
+        <h1 className="text-5xl font-bold mb-4">Bold Property Maintenance</h1>
+        
+        {/* Logo centrepiece */}
+        <div className="flex justify-center mb-6">
+          <img
+            src="/images/bold-logo.jpg"
+            alt="Bold Property Maintenance"
+            className="w-full max-w-sm rounded-2xl"
+            style={{ mixBlendMode: 'screen' }}
+          />
+        </div>
+
+        <p className="text-xl mb-8 opacity-90 tracking-wide uppercase">
+          Professional lawn and garden care in the Manawatu area
+        </p>
+
+        <p className="text-lg mb-8 leading-relaxed">
+          We are a locally-owned maintenance business that combines professional,
+          high-quality service with genuine community commitment.
+        </p>
+
+        
+          href="#contact"
+          className="inline-block bg-white text-[#7cb342] font-bold py-3 px-8 rounded-lg hover:bg-green-50 transition-colors"
+        >
+          Get a Quote Today
+        </a>
+      </div>
+    </section>
+
+    {/* ── Services ── */}
+    <section id="services" className="py-16 px-8 bg-gray-50">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12 text-gray-800">
+          Our Services
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[
+            {
+              title: 'Lawn Maintenance',
+              description: 'Regular mowing, edging, and lawn care to keep your property looking pristine.'
+            },
+            {
+              title: 'Garden Care',
+              description: 'Planting, weeding, pruning, and seasonal garden maintenance.'
+            },
+            {
+              title: 'Property Cleaning',
+              description: 'Gutter cleaning, fence maintenance, and general property upkeep.'
+            }
+          ].map((service, idx) => (
+            <div key={idx} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
+              <h3 className="text-2xl font-bold mb-3 text-[#7cb342]">{service.title}</h3>
+              <p className="text-gray-600">{service.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    {/* ── About ── */}
+    <section id="about" className="py-16 px-8">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-8 text-gray-800">
+          About Bold
+        </h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+          <div>
+            <p className="text-gray-600 leading-relaxed mb-6">
+              When you choose Bold, you're supporting a local family business with
+              strong ties to the wider community.
             </p>
-            <a href="#contact" class="cta-button">Get a Quote Today</a>
+            <p className="text-gray-600 leading-relaxed">
+              With years of experience and a passion for quality workmanship, we take
+              pride in every project we undertake.
+            </p>
+          </div>
+          <div className="bg-[#7cb342] rounded-lg h-64 flex items-center justify-center text-white text-center">
+            <p className="text-lg font-semibold">Your lawn care expertise</p>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ── Services ── -->
-    <section class="services" id="services">
-        <div class="services-container">
-            <h2>Our Services</h2>
-            <div class="services-grid">
-                <div class="service-card">
-                    <h3>Lawn Maintenance</h3>
-                    <p>Lawn care to keep your property looking pristine.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Garden Care</h3>
-                    <p>General garden maintenance year round!</p>
-                </div>
-                <div class="service-card">
-                    <h3>Property Cleaning</h3>
-                    <p>General property upkeep</p>
-                </div>
-            </div>
+    {/* ── Contact ── */}
+    <section id="contact" className="bg-[#7cb342] text-white py-16 px-8">
+      <div className="max-w-6xl mx-auto">
+        <h2 className="text-4xl font-bold text-center mb-12">Get in Touch</h2>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Contact Information</h3>
+            <p className="mb-4">
+              <strong>Phone:</strong> <a href="tel:+64276894567" className="hover:text-green-100">027 689 4567</a>
+            </p>
+            <p className="mb-4">
+              <strong>Email:</strong> <a href="mailto:info@boldmaintenance.co.nz" className="hover:text-green-100">info@boldmaintenance.co.nz</a>
+            </p>
+            <p className="mb-4">
+              <strong>Location:</strong> Manawatu Region, New Zealand
+            </p>
+          </div>
+          <div>
+            <h3 className="text-2xl font-bold mb-4">Quick Contact Form</h3>
+            <form className="space-y-4">
+              <input
+                type="text"
+                placeholder="Your Name"
+                className="w-full px-4 py-2 rounded text-gray-800"
+              />
+              <input
+                type="email"
+                placeholder="Your Email"
+                className="w-full px-4 py-2 rounded text-gray-800"
+              />
+              <textarea
+                placeholder="Your Message"
+                rows="4"
+                className="w-full px-4 py-2 rounded text-gray-800"
+              ></textarea>
+              <button
+                type="submit"
+                className="w-full bg-white text-[#7cb342] font-bold py-2 px-4 rounded hover:bg-green-50 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
         </div>
+      </div>
     </section>
 
-    <!-- ── About ── -->
-    <section class="about" id="about">
-        <div class="about-container">
-            <h2>About Bold</h2>
-            <div class="about-content">
-                <div>
-                    <p>
-                        When you choose Bold, you're supporting a local family business with
-                        strong ties to the wider community.
-                    </p>
-                    <p>
-                        With years of experience and a passion for quality workmanship, we take
-                        pride in every project we undertake.
-                    </p>
-                </div>
-                <div class="about-image">
-                    Your property maintenance "Go-to"!
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Contact ── -->
-    <section class="contact" id="contact">
-        <div class="contact-container">
-            <h2>Get in Touch</h2>
-            <div class="contact-grid">
-                <div class="contact-item">
-                    <h3>Phone</h3>
-                    <a href="tel:+64226055453">022 6055 453</a>
-                </div>
-                <div class="contact-item">
-                    <h3>Email</h3>
-                    <a href="mailto:boldpropertymaintenance@gmail.com">boldpropertymaintenance@gmail.com</a>
-                </div>
-                <div class="contact-item">
-                    <h3>Location</h3>
-                    <p>Palmerston North, New Zealand</p>
-                </div>
-            </div>
-
-            <div class="contact-form">
-                <form>
-                    <div class="form-group">
-                        <input type="text" placeholder="Your Name" required>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" placeholder="Your Email" required>
-                    </div>
-                    <div class="form-group">
-                        <textarea placeholder="Your Message" required></textarea>
-                    </div>
-                    <div class="form-group">
-                        <button type="submit">Send Message</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- ── Footer ── -->
-    <footer>
-        <p>&copy; 2026 Bold Property Maintenance. All rights reserved.</p>
-        <p>NZBN: 9429053659002 | Public Liability Insurance: BIZ129925</p>
-        <p>
-            <a href="#">Privacy Policy</a> |
-            <a href="#">Terms of Service</a> |
-            <a href="#">Health & Safety</a>
-        </p>
-        <p style="margin-top: 1rem;">
-            Fully Insured | Locally-Owned Family Business
-        </p>
+    {/* ── Footer ── */}
+    <footer className="bg-[#2d5a2d] text-white text-center py-10 px-4">
+      <div className="flex justify-center mb-4">
+        <img
+          src="/images/bold-logo.jpg"
+          alt="Bold Property Maintenance"
+          className="h-16 w-auto rounded"
+          style={{ mixBlendMode: 'screen' }}
+        />
+      </div>
+      <p className="mb-2">
+        &copy; 2026 Bold Property Maintenance. All rights reserved.
+      </p>
+      <p className="mb-4 opacity-75 text-sm">
+        NZBN: 9429053659002 | Public Liability Insurance: TBC
+      </p>
+      <div className="flex justify-center gap-6 flex-wrap">
+        {['Privacy Policy', 'Terms of Service', 'Health & Safety'].map((link) => (
+          <a key={link} href="#" className="hover:text-green-200 transition-colors text-sm">
+            {link}
+          </a>
+        ))}
+      </div>
     </footer>
-</body>
-</html>
+  </div>
+);
